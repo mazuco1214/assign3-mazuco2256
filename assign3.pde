@@ -167,7 +167,8 @@ for(int i = 0 ; i<24 ;i++){
   image(stone1,width-(i-21)*80,i*80+soilY);
   image(stone1,width-(i-22)*80,i*80+soilY);
   image(stone2,width-(i-22)*80,i*80+soilY);
-}
+   
+ }
 
  }
 
@@ -182,9 +183,16 @@ popMatrix();
 image(groundHog,groundHogX,groundHogY);
 
 		// Health UI
-for(int i=0 ; i<TOTAL_LIFE ; i++){
-
-     image(life,10 + 70*i,10);
+for(int i=0 ; i< playerHealth ; i++){
+  image(life,10 + 70*i,10);  
+  
+  if(playerHealth >= TOTAL_LIFE )
+     playerHealth = TOTAL_LIFE;
+     
+    if(playerHealth <= 0 )
+    playerHealth = 0;
+     
+     
 
    
  }
